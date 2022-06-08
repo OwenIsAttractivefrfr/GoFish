@@ -34,7 +34,7 @@ public class Player
     public ArrayList<Card> checkHand(ArrayList<Card> Hand, Rank guess)
     {
         ArrayList<Card> newHand = new ArrayList<>();
-        for(int i = 0; i < Hand.size(); i++)
+        for(int i = 0; i <= Hand.size() - 1; i++)
         {
             Card card = Hand.get(i);
             if(card.getRank() == guess)
