@@ -1,10 +1,34 @@
 package com.company;
-
 import java.util.*;
 
 
 public class Main
 {
+
+    public static Map countFrequency(Player player)
+    {
+        Map<Rank, Card> frequency = new HashMap<>();
+        Map<Integer, Card> suitFrequency = new HashMap<>();
+        for(int i = 0; i < player.getHand().size(); i++)
+        {
+            if(frequency.containsKey(player.getHand().get(i).getRank()))
+            {
+                frequency.put(player.getHand().get(i).getRank(), player.getHand().get(i));
+            }
+            else
+            {
+                frequency.put(player.getHand().get(i).getRank(), player.getHand().get(i));
+            }
+        }
+        for(int i = 0; i <frequency.size(); i++)
+        {
+            if(frequency.containsKey(player.getHand().get(i).getRank()))
+            {
+                suitFrequency.put();
+            }
+        }
+        return frequency;
+    }
 
     public static void main(String[] args)
     {
@@ -25,7 +49,7 @@ public class Main
             player2.getCards(lake.pop());
         }
 
-        while (lake.size() > 0) {
+        while (lake.size() > 40) {
             try
             {
                 String[] cls = new String[] {"cmd.exe", "/c", "cls"};
@@ -312,8 +336,9 @@ public class Main
                 }
                 Random random = new Random();
                 int computerCardChoice = random.nextInt(13);
+                System.out.println("Do you have a " + rankArray[computerCardChoice] + "?");
                 if (rankArray[computerCardChoice] == Rank.TWO) {
-                ArrayList<Card> newHand = player1.checkHand(player2.getHand(), rankArray[PlayerCardChoice]);
+                    ArrayList<Card> newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
                 Card[] cardlist = new Card[newHand.size()];
                 cardlist = newHand.toArray(cardlist);
 
@@ -329,7 +354,7 @@ public class Main
                 }
 
                 if (rankArray[computerCardChoice] == Rank.THREE) {
-                    ArrayList<Card> newHand = player1.checkHand(player2.getHand(), rankArray[PlayerCardChoice]);
+                    ArrayList<Card> newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
                     Card[] cardlist = new Card[newHand.size()];
                     cardlist = newHand.toArray(cardlist);
 
@@ -345,7 +370,7 @@ public class Main
                 }
 
                 if (rankArray[computerCardChoice] == Rank.FOUR) {
-                    ArrayList<Card> newHand = player1.checkHand(player2.getHand(), rankArray[PlayerCardChoice]);
+                    ArrayList<Card> newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
                     Card[] cardlist = new Card[newHand.size()];
                     cardlist = newHand.toArray(cardlist);
 
@@ -361,7 +386,7 @@ public class Main
                 }
 
                 if (rankArray[computerCardChoice] == Rank.FIVE) {
-                    ArrayList<Card> newHand = player1.checkHand(player2.getHand(), rankArray[PlayerCardChoice]);
+                    ArrayList<Card> newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
                     Card[] cardlist = new Card[newHand.size()];
                     cardlist = newHand.toArray(cardlist);
 
@@ -377,7 +402,7 @@ public class Main
                 }
 
                 if (rankArray[computerCardChoice] == Rank.SIX) {
-                    ArrayList<Card> newHand = player1.checkHand(player2.getHand(), rankArray[PlayerCardChoice]);
+                    ArrayList<Card> newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
                     Card[] cardlist = new Card[newHand.size()];
                     cardlist = newHand.toArray(cardlist);
 
@@ -394,7 +419,7 @@ public class Main
 
                 if (rankArray[computerCardChoice] == Rank.SEVEN)
                 {
-                    ArrayList<Card> newHand = player1.checkHand(player2.getHand(), rankArray[PlayerCardChoice]);
+                    ArrayList<Card> newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
                     Card[] cardlist = new Card[newHand.size()];
                     cardlist = newHand.toArray(cardlist);
 
@@ -410,7 +435,7 @@ public class Main
                 }
                 if (rankArray[computerCardChoice] == Rank.EIGHT)
                 {
-                    ArrayList<Card> newHand = player1.checkHand(player2.getHand(), rankArray[PlayerCardChoice]);
+                    ArrayList<Card> newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
                     Card[] cardlist = new Card[newHand.size()];
                     cardlist = newHand.toArray(cardlist);
 
@@ -426,7 +451,7 @@ public class Main
                 }
                 if (rankArray[computerCardChoice] == Rank.NINE)
                 {
-                    ArrayList<Card> newHand = player1.checkHand(player2.getHand(), rankArray[PlayerCardChoice]);
+                    ArrayList<Card> newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
                     Card[] cardlist = new Card[newHand.size()];
                     cardlist = newHand.toArray(cardlist);
 
@@ -442,7 +467,7 @@ public class Main
                 }
                 if (rankArray[computerCardChoice] == Rank.TEN)
                 {
-                    ArrayList<Card> newHand = player1.checkHand(player2.getHand(), rankArray[PlayerCardChoice]);
+                    ArrayList<Card> newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
                     Card[] cardlist = new Card[newHand.size()];
                     cardlist = newHand.toArray(cardlist);
 
@@ -458,7 +483,7 @@ public class Main
                 }
                 if (rankArray[computerCardChoice] == Rank.JACK)
                 {
-                    ArrayList<Card> newHand = player1.checkHand(player2.getHand(), rankArray[PlayerCardChoice]);
+                    ArrayList<Card> newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
                     Card[] cardlist = new Card[newHand.size()];
                     cardlist = newHand.toArray(cardlist);
 
@@ -474,7 +499,7 @@ public class Main
                 }
                 if (rankArray[computerCardChoice] == Rank.QUEEN)
                 {
-                    ArrayList<Card> newHand = player1.checkHand(player2.getHand(), rankArray[PlayerCardChoice]);
+                    ArrayList<Card> newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
                     Card[] cardlist = new Card[newHand.size()];
                     cardlist = newHand.toArray(cardlist);
 
@@ -490,7 +515,7 @@ public class Main
                 }
                 if (rankArray[computerCardChoice] == Rank.KING)
                 {
-                    ArrayList<Card> newHand = player1.checkHand(player2.getHand(), rankArray[PlayerCardChoice]);
+                    ArrayList<Card> newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
                     Card[] cardlist = new Card[newHand.size()];
                     cardlist = newHand.toArray(cardlist);
 
@@ -507,56 +532,58 @@ public class Main
 
                 else if (rankArray[computerCardChoice] == Rank.TWO)
                 {
-                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[PlayerCardChoice]);
+                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
                 }
                 else if (rankArray[computerCardChoice] == Rank.THREE)
                 {
-                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[PlayerCardChoice]);
+                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
                 }
                 else if (rankArray[computerCardChoice] == Rank.FOUR)
                 {
-                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[PlayerCardChoice]);
+                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
                 }
                 else if (rankArray[computerCardChoice] == Rank.FIVE)
                 {
-                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[PlayerCardChoice]);
+                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
                 }
                 else if (rankArray[computerCardChoice] == Rank.SIX)
                 {
-                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[PlayerCardChoice]);
+                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
                 }
                 else if (rankArray[computerCardChoice] == Rank.SEVEN)
                 {
-                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[PlayerCardChoice]);
+                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
                 }
                 else if (rankArray[computerCardChoice] == Rank.EIGHT)
                 {
-                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[PlayerCardChoice]);
+                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
                 }
                 else if (rankArray[computerCardChoice] == Rank.NINE)
                 {
-                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[PlayerCardChoice]);
+                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
                 }
                 else if (rankArray[computerCardChoice] == Rank.TEN)
                 {
-                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[PlayerCardChoice]);
+                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
                 }
                 else if (rankArray[computerCardChoice] == Rank.JACK)
                 {
-                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[PlayerCardChoice]);
+                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
                 }
                 else if (rankArray[computerCardChoice] == Rank.QUEEN)
                 {
-                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[PlayerCardChoice]);
+                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
                 }
                 else if (rankArray[computerCardChoice] == Rank.KING)
                 {
-                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[PlayerCardChoice]);
+                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
                 }
                 else
                 {
 
                 }
             }
+        Map p1 = countFrequency(player1);
+        System.out.println(p1);
         }
     }
