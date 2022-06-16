@@ -7,26 +7,31 @@ public class Main
 
     public static Map countFrequency(Player player)
     {
-        Map<Rank, Card> frequency = new HashMap<>();
-        Map<Integer, Card> suitFrequency = new HashMap<>();
+        Map<Rank, Integer> frequency = new HashMap<>();
+        Map<Rank, Suit> suitFrequency = new HashMap<>();
         for(int i = 0; i < player.getHand().size(); i++)
         {
+            int numberOfCards = 0;
             if(frequency.containsKey(player.getHand().get(i).getRank()))
             {
-                frequency.put(player.getHand().get(i).getRank(), player.getHand().get(i));
+                frequency.put(player.getHand().get(i).getRank(), frequency.get(player.getHand().get(i).getRank()) +1);
+                suitFrequency.put(player.getHand().get(i).getRank(), player.getHand().get(i).getSuit());
             }
             else
             {
-                frequency.put(player.getHand().get(i).getRank(), player.getHand().get(i));
+                frequency.put(player.getHand().get(i).getRank(), 1);
+
+                suitFrequency.put(player.getHand().get(i).getRank(), player.getHand().get(i).getSuit());
+
             }
         }
-        for(int i = 0; i <frequency.size(); i++)
-        {
-            if(frequency.containsKey(player.getHand().get(i).getRank()))
-            {
-                suitFrequency.put();
-            }
-        }
+//        frequency.putAll(suitFrequency);
+//        Map<Integer, Card> combinedDictionary = new HashMap<>();
+//        combinedDictionary.putAll(suitFrequency);
+//        combinedDictionary.putAll(frequency);
+        System.out.println(suitFrequency);
+        System.out.println();
+        System.out.println(frequency);
         return frequency;
     }
 
@@ -49,17 +54,12 @@ public class Main
             player2.getCards(lake.pop());
         }
 
-        while (lake.size() > 40) {
-            try
-            {
-                String[] cls = new String[] {"cmd.exe", "/c", "cls"};
-                Runtime.getRuntime().exec(cls);
-            }
-            catch (final Exception e)
-            {
-                e.printStackTrace();
-            }
+        while (lake.size() > 35) {
+            System.out.println("My cards");
             player1.lookAtHand();
+            System.out.println("--------------------------------------------------------------");
+            System.out.println("Computer's cards");
+            player2.lookAtHand();
             System.out.println("What card do you need? 1-13");
             Scanner A = new Scanner(System.in);
             int PlayerCardChoice = A.nextInt() - 1;
@@ -281,59 +281,59 @@ public class Main
 
                 }
             }
-
-            else if (rankArray[PlayerCardChoice] == Rank.TWO)
-                {
-                    ArrayList<Card>newHand = player1.checkHand(player2.getHand(), rankArray[PlayerCardChoice]);
-                }
-                else if (rankArray[PlayerCardChoice] == Rank.THREE)
-                {
-                    ArrayList<Card>newHand = player1.checkHand(player2.getHand(), rankArray[PlayerCardChoice]);
-                }
-                else if (rankArray[PlayerCardChoice] == Rank.FOUR)
-                {
-                    ArrayList<Card>newHand = player1.checkHand(player2.getHand(), rankArray[PlayerCardChoice]);
-                }
-                else if (rankArray[PlayerCardChoice] == Rank.FIVE)
-                {
-                    ArrayList<Card>newHand = player1.checkHand(player2.getHand(), rankArray[PlayerCardChoice]);
-                }
-                else if (rankArray[PlayerCardChoice] == Rank.SIX)
-                {
-                    ArrayList<Card>newHand = player1.checkHand(player2.getHand(), rankArray[PlayerCardChoice]);
-                }
-                else if (rankArray[PlayerCardChoice] == Rank.SEVEN)
-                {
-                    ArrayList<Card>newHand = player1.checkHand(player2.getHand(), rankArray[PlayerCardChoice]);
-                }
-                else if (rankArray[PlayerCardChoice] == Rank.EIGHT)
-                {
-                    ArrayList<Card>newHand = player1.checkHand(player2.getHand(), rankArray[PlayerCardChoice]);
-                }
-                else if (rankArray[PlayerCardChoice] == Rank.NINE)
-                {
-                    ArrayList<Card>newHand = player1.checkHand(player2.getHand(), rankArray[PlayerCardChoice]);
-                }
-                else if (rankArray[PlayerCardChoice] == Rank.TEN)
-                {
-                    ArrayList<Card>newHand = player1.checkHand(player2.getHand(), rankArray[PlayerCardChoice]);
-                }
-                else if (rankArray[PlayerCardChoice] == Rank.JACK)
-                {
-                    ArrayList<Card>newHand = player1.checkHand(player2.getHand(), rankArray[PlayerCardChoice]);
-                }
-                else if (rankArray[PlayerCardChoice] == Rank.QUEEN)
-                {
-                    ArrayList<Card>newHand = player1.checkHand(player2.getHand(), rankArray[PlayerCardChoice]);
-                }
-                else if (rankArray[PlayerCardChoice] == Rank.KING)
-                {
-                    ArrayList<Card>newHand = player1.checkHand(player2.getHand(), rankArray[PlayerCardChoice]);
-                }
-                else
-                {
-
-                }
+//
+//            else if (rankArray[PlayerCardChoice] == Rank.TWO)
+//                {
+//                    ArrayList<Card>newHand = player1.checkHand(player2.getHand(), rankArray[PlayerCardChoice]);
+//                }
+//                else if (rankArray[PlayerCardChoice] == Rank.THREE)
+//                {
+//                    ArrayList<Card>newHand = player1.checkHand(player2.getHand(), rankArray[PlayerCardChoice]);
+//                }
+//                else if (rankArray[PlayerCardChoice] == Rank.FOUR)
+//                {
+//                    ArrayList<Card>newHand = player1.checkHand(player2.getHand(), rankArray[PlayerCardChoice]);
+//                }
+//                else if (rankArray[PlayerCardChoice] == Rank.FIVE)
+//                {
+//                    ArrayList<Card>newHand = player1.checkHand(player2.getHand(), rankArray[PlayerCardChoice]);
+//                }
+//                else if (rankArray[PlayerCardChoice] == Rank.SIX)
+//                {
+//                    ArrayList<Card>newHand = player1.checkHand(player2.getHand(), rankArray[PlayerCardChoice]);
+//                }
+//                else if (rankArray[PlayerCardChoice] == Rank.SEVEN)
+//                {
+//                    ArrayList<Card>newHand = player1.checkHand(player2.getHand(), rankArray[PlayerCardChoice]);
+//                }
+//                else if (rankArray[PlayerCardChoice] == Rank.EIGHT)
+//                {
+//                    ArrayList<Card>newHand = player1.checkHand(player2.getHand(), rankArray[PlayerCardChoice]);
+//                }
+//                else if (rankArray[PlayerCardChoice] == Rank.NINE)
+//                {
+//                    ArrayList<Card>newHand = player1.checkHand(player2.getHand(), rankArray[PlayerCardChoice]);
+//                }
+//                else if (rankArray[PlayerCardChoice] == Rank.TEN)
+//                {
+//                    ArrayList<Card>newHand = player1.checkHand(player2.getHand(), rankArray[PlayerCardChoice]);
+//                }
+//                else if (rankArray[PlayerCardChoice] == Rank.JACK)
+//                {
+//                    ArrayList<Card>newHand = player1.checkHand(player2.getHand(), rankArray[PlayerCardChoice]);
+//                }
+//                else if (rankArray[PlayerCardChoice] == Rank.QUEEN)
+//                {
+//                    ArrayList<Card>newHand = player1.checkHand(player2.getHand(), rankArray[PlayerCardChoice]);
+//                }
+//                else if (rankArray[PlayerCardChoice] == Rank.KING)
+//                {
+//                    ArrayList<Card>newHand = player1.checkHand(player2.getHand(), rankArray[PlayerCardChoice]);
+//                }
+//                else
+//                {
+//
+//                }
                 Random random = new Random();
                 int computerCardChoice = random.nextInt(13);
                 System.out.println("Do you have a " + rankArray[computerCardChoice] + "?");
@@ -529,61 +529,62 @@ public class Main
 
                     }
                 }
-
-                else if (rankArray[computerCardChoice] == Rank.TWO)
-                {
-                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
-                }
-                else if (rankArray[computerCardChoice] == Rank.THREE)
-                {
-                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
-                }
-                else if (rankArray[computerCardChoice] == Rank.FOUR)
-                {
-                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
-                }
-                else if (rankArray[computerCardChoice] == Rank.FIVE)
-                {
-                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
-                }
-                else if (rankArray[computerCardChoice] == Rank.SIX)
-                {
-                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
-                }
-                else if (rankArray[computerCardChoice] == Rank.SEVEN)
-                {
-                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
-                }
-                else if (rankArray[computerCardChoice] == Rank.EIGHT)
-                {
-                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
-                }
-                else if (rankArray[computerCardChoice] == Rank.NINE)
-                {
-                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
-                }
-                else if (rankArray[computerCardChoice] == Rank.TEN)
-                {
-                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
-                }
-                else if (rankArray[computerCardChoice] == Rank.JACK)
-                {
-                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
-                }
-                else if (rankArray[computerCardChoice] == Rank.QUEEN)
-                {
-                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
-                }
-                else if (rankArray[computerCardChoice] == Rank.KING)
-                {
-                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
-                }
-                else
-                {
-
-                }
+//
+//                else if (rankArray[computerCardChoice] == Rank.TWO)
+//                {
+//                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
+//                }
+//                else if (rankArray[computerCardChoice] == Rank.THREE)
+//                {
+//                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
+//                }
+//                else if (rankArray[computerCardChoice] == Rank.FOUR)
+//                {
+//                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
+//                }
+//                else if (rankArray[computerCardChoice] == Rank.FIVE)
+//                {
+//                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
+//                }
+//                else if (rankArray[computerCardChoice] == Rank.SIX)
+//                {
+//                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
+//                }
+//                else if (rankArray[computerCardChoice] == Rank.SEVEN)
+//                {
+//                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
+//                }
+//                else if (rankArray[computerCardChoice] == Rank.EIGHT)
+//                {
+//                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
+//                }
+//                else if (rankArray[computerCardChoice] == Rank.NINE)
+//                {
+//                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
+//                }
+//                else if (rankArray[computerCardChoice] == Rank.TEN)
+//                {
+//                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
+//                }
+//                else if (rankArray[computerCardChoice] == Rank.JACK)
+//                {
+//                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
+//                }
+//                else if (rankArray[computerCardChoice] == Rank.QUEEN)
+//                {
+//                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
+//                }
+//                else if (rankArray[computerCardChoice] == Rank.KING)
+//                {
+//                    ArrayList<Card>newHand = player2.checkHand(player1.getHand(), rankArray[computerCardChoice]);
+//                }
+//                else
+//                {
+//
+//                }
             }
         Map p1 = countFrequency(player1);
-        System.out.println(p1);
+
+//        System.out.println(Arrays.toString((p1.entrySet().toArray())));
         }
     }
