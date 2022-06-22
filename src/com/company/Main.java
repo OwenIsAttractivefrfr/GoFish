@@ -35,6 +35,23 @@ public class Main
         return frequency;
     }
 
+    public static ArrayList<Object> message(Map p1)
+    {
+        Iterator hashMapIterator = p1.entrySet().iterator();
+        ArrayList<Object> message = new ArrayList<Object>();
+        while (hashMapIterator.hasNext()) {
+
+            Map.Entry mapElement = (Map.Entry) hashMapIterator.next();
+            int values = ((int) mapElement.getValue());
+            if (values == 2) {
+                System.out.println(mapElement.getKey());
+                message.add(mapElement.getKey());
+            }
+        }
+        System.out.println(message);
+        return message;
+    }
+
     public static void main(String[] args)
     {
         Stack<Card> lake = new Stack<>();
@@ -54,7 +71,7 @@ public class Main
             player2.getCards(lake.pop());
         }
 
-        while (lake.size() > 35) {
+        while (lake.size() > 40) {
             System.out.println("My cards");
             player1.lookAtHand();
             System.out.println("--------------------------------------------------------------");
@@ -584,7 +601,8 @@ public class Main
 //                }
             }
         Map p1 = countFrequency(player1);
-
+        ArrayList<Object> a = message(p1);
+        System.out.println(a);
 //        System.out.println(Arrays.toString((p1.entrySet().toArray())));
         }
     }
